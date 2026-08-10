@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import ProcessSection from "./components/Process";
 import ServicesSection from "./components/Services";
 import ServiceArea from "./components/ServicesArea";
+import TestimonialsSection from "./components/Testimonials";
 import WhyChooseUs from "./components/WhyChoose";
 import Contact from "./contact/page";
 
@@ -21,6 +22,7 @@ export default function Home() {
       <GallerySection />
       <WhyChooseUs />
       <ProcessSection />
+      <TestimonialsSection />
       <Contact />
       <FloatingActions />
     </div>
