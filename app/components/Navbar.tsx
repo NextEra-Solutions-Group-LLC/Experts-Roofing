@@ -47,23 +47,26 @@ export default function Navbar() {
                         <div className="mx-auto max-w-7xl px-6 lg:px-12 flex items-center justify-between h-11 text-[13px] tracking-wide text-zinc-300">
                             <div className="flex items-center gap-6">
                                 <a
-                                    href="tel:8177680413"
+                                    href="tel:3477663669"
                                     className="flex items-center gap-2 hover:text-[#60A5FA] transition-colors duration-300 group"
                                 >
                                     <div className="w-6 h-6 rounded-full bg-[#3B82F6]/10 border border-[#3B82F6]/30 flex items-center justify-center group-hover:border-[#60A5FA] transition-colors">
                                         <Phone className="w-3.5 h-3.5 text-[#3B82F6]" strokeWidth={2.2} />
                                     </div>
-                                    <span className="font-medium text-zinc-200">817-768-0413</span>
+                                    <div className="flex flex-col">
+                                        <span className="font-bold text-zinc-100 text-[13.5px] leading-tight">347-ROOF-NOW</span>
+                                        <span className="text-[10px] text-zinc-400 font-medium tracking-normal leading-tight">347-7663-669</span>
+                                    </div>
                                 </a>
                                 <span className="hidden sm:block w-px h-4 bg-zinc-800" />
                                 <a
-                                    href="mailto:raul.gill.2020@gmail.com"
+                                    href="mailto:contact@expertsroofing.us"
                                     className="hidden sm:flex items-center gap-2 hover:text-[#60A5FA] transition-colors duration-300 group"
                                 >
                                     <div className="w-6 h-6 rounded-full bg-[#3B82F6]/10 border border-[#3B82F6]/30 flex items-center justify-center group-hover:border-[#60A5FA] transition-colors">
                                         <Mail className="w-3.5 h-3.5 text-[#3B82F6]" strokeWidth={2.2} />
                                     </div>
-                                    <span className="font-medium text-zinc-200">raul.gill.2020@gmail.com</span>
+                                    <span className="font-medium text-zinc-200">contact@expertsroofing.us</span>
                                 </a>
                             </div>
                             <div className="flex items-center gap-2 text-zinc-400 bg-zinc-900/60 px-3.5 py-1 rounded-full border border-zinc-800">

@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 
 const BULLETS = [
-    "Certified roofing crews with 25+ years combined field experience",
+    "Certified roofing crews with 20+ years combined field experience",
     "Premium materials sourced from top-tier manufacturers",
     "Transparent quoting with no hidden costs, ever",
     "Licensed, bonded, and fully insured across the DFW area",
@@ -65,7 +65,7 @@ export default function About() {
                         <div className="grid grid-cols-5 gap-4">
                             <div className="col-span-3 relative rounded-2xl overflow-hidden border border-[#3b82f6]/20 aspect-[4/5]">
                                 <img
-                                    src="https://i.ibb.co/LDrvYMdX/image.png"
+                                    src="https://i.ibb.co/whLC0NLq/image.png"
                                     alt="Roofing crew installing shingles"
                                     className="absolute inset-0 w-full h-full object-cover"
                                 />

@@ -26,7 +26,7 @@ const TESTIMONIALS: Testimonial[] = [
         quote:
             "Storm damage repaired fast, and the insurance paperwork was handled for us end to end.",
         image:
-            "https://i.ibb.co/PvFqjH01/image.png",
+            "https://i.ibb.co/Vn2Lsd4/image.png",
     },
     {
         name: "Ana",
@@ -34,7 +34,7 @@ const TESTIMONIALS: Testimonial[] = [
         quote:
             "Honest quote, no upsells, and the crew showed up exactly when they said they would.",
         image:
-            "https://i.ibb.co/PvFqjH01/image.png",
+            "https://i.ibb.co/6J073Mvb/image.png",
     },
     {
         name: "Oakes",
@@ -42,7 +42,7 @@ const TESTIMONIALS: Testimonial[] = [
         quote:
             "We manage a dozen properties and Experts Roofing is the only crew we call now.",
         image:
-            "https://i.ibb.co/PvFqjH01/image.png",
+            "https://i.ibb.co/9krp0yKL/image.png",
     },
     {
         name: "Lauren",
@@ -50,7 +50,7 @@ const TESTIMONIALS: Testimonial[] = [
         quote:
             "Five year old leak finally gone. Wish we'd called them the first time it happened.",
         image:
-            "https://i.ibb.co/PvFqjH01/image.png",
+            "https://i.ibb.co/0Rw5jLBz/image.png",
     },
 ];
 
@@ -130,11 +130,11 @@ export default function TestimonialsSection() {
                                             </div>
 
                                             {/* center play button */}
-                                            <div className="flex-1 flex items-center justify-center">
+                                            {/* <div className="flex-1 flex items-center justify-center">
                                                 <span className="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#1d4ed8] backdrop-blur-sm shadow-[0_10px_30px_-6px_rgba(29,78,216,0.7)]">
                                                     <Play className="w-5 h-5 sm:w-6 sm:h-6 text-white fill-white ml-0.5" />
                                                 </span>
-                                            </div>
+                                            </div> */}
 
                                             {/* bottom name/role */}
                                             <div className="text-left">
@@ -184,13 +184,13 @@ export default function TestimonialsSection() {
                     transition={{ delay: 0.3, duration: 0.5 }}
                     className="text-center mt-10 sm:mt-12"
                 >
-                    <a
+                    {/* <a
                         href="/testimonials"
                         className="inline-flex items-center gap-2 text-[13px] font-medium text-neutral-400 hover:text-[#60a5fa] transition-colors duration-300"
                     >
                         See all testimonials
                         <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
-                    </a>
+                    </a> */}
                 </motion.div>
             </div>
         </section>

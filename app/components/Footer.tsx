@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { motion } from "framer-motion";
 
@@ -42,8 +42,8 @@ export default function RoofingFooter({
     logoText = 'EXPERTS ROOFING',
     logoImg = 'https://i.ibb.co/0jyqw7Kr/image.png',
     description = "With years of experience serving Dallas TX, we're ready to be your trusted choice for a professional and high-quality project. Contact us today for your free estimate.",
-    phone = '817-768-0413',
-    email = 'raul.gill.2020@gmail.com',
+    phone = '347-7663-669',
+    email = 'contact@expertsroofing.us',
     address = 'Dallas, TX',
     quickLinks = defaultLinks,
     serviceAreas = defaultAreas,
@@ -92,16 +92,16 @@ export default function RoofingFooter({
                             <ul className="flex flex-col gap-3 text-sm text-white opacity-90">
                                 <li>
                                     <a href={`tel:${phone}`} className="flex items-center gap-3 hover:text-blue-400 transition-colors duration-300">
-                                        <span className="text-blue-500">›</span> {phone}
+                                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500" /> {phone}
                                     </a>
                                 </li>
                                 <li>
                                     <a href={`mailto:${email}`} className="flex items-center gap-3 hover:text-blue-400 transition-colors duration-300">
-                                        <span className="text-blue-500">›</span> {email}
+                                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500" /> {email}
                                     </a>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <span className="text-blue-500">›</span> {address}
+                                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500" /> {address}
                                 </li>
                             </ul>
                         </div>
@@ -121,8 +121,8 @@ export default function RoofingFooter({
                         <ul className="flex flex-col gap-3 text-sm text-white opacity-90">
                             {quickLinks.map((link, index) => (
                                 <li key={index}>
-                                    <a href={link.href} className="flex items-center gap-2 hover:text-blue-400 transition-colors duration-300">
-                                        <span className="text-blue-500 text-xs">›</span> {link.label}
+                                    <a href={link.href} className="flex items-center gap-2.5 hover:text-blue-400 transition-colors duration-300">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500" /> {link.label}
                                     </a>
                                 </li>
                             ))}
@@ -143,7 +143,7 @@ export default function RoofingFooter({
                         <ul className="flex flex-col gap-3 text-sm text-white opacity-90">
                             {serviceAreas.map((area, index) => (
                                 <li key={index} className="flex items-center gap-2.5">
-                                    <span className="w-2 h-2 rounded-full bg-blue-500" />
+                                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
                                     {area.name}
                                 </li>
                             ))}

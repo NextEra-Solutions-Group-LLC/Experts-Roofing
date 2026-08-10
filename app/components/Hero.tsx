@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Phone, ClipboardCheck, Wrench, ShieldAlert } from "lucide-react";
+import { Wrench, ClipboardCheck, ShieldAlert } from "lucide-react";
 
 const HERO_IMAGES = [
     "https://i.ibb.co/Swrm59HQ/image.png",
@@ -55,16 +55,16 @@ export default function Hero() {
                         className="absolute inset-0 w-full h-full object-cover"
                     />
                 </AnimatePresence>
-                {/* Dark Professional Overlay Gradients */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#05070B] via-[#05070B]/85 to-[#05070B]/40" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#05070B] via-transparent to-[#05070B]/60" />
+                {/* Lighter Professional Overlay Gradients */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#05070B]/90 via-[#05070B]/60 to-[#05070B]/20" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#05070B] via-transparent to-[#05070B]/40" />
             </div>
 
             {/* Content Container */}
             <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-12 w-full">
                 <div className="grid lg:grid-cols-2 gap-14 items-center">
 
-                    {/* Left Column: Copy & CTAs */}
+                    {/* Left Column: Copy Only */}
                     <div>
                         <motion.div
                             initial={{ opacity: 0, y: 24 }}
@@ -97,31 +97,8 @@ export default function Hero() {
                             transition={{ delay: 0.24, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                             className="mt-6 max-w-lg text-zinc-300 text-[16px] leading-relaxed font-normal"
                         >
-                            Experts Roofing, we take pride quality with over 25 Years of experience. We can help you with any roof issue.
+                            Experts Roofing, we take pride quality with over 20 Years of experience. We can help you with any roof issue.
                         </motion.p>
-
-                        <motion.div
-                            initial={{ opacity: 0, y: 24 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.36, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                            className="mt-10 flex flex-wrap items-center gap-5"
-                        >
-                            <a
-                                href="tel:8177680413"
-                                className="group inline-flex items-center gap-3 rounded-full px-7 py-4 text-[13.5px] font-bold tracking-[0.08em] uppercase text-white bg-gradient-to-r from-[#1D4ED8] via-[#2563EB] to-[#3B82F6] hover:from-[#2563EB] hover:to-[#1D4ED8] shadow-[0_8px_30px_rgba(37,99,235,0.45)] transition-all duration-300 transform hover:-translate-y-0.5 border border-blue-400/30"
-                            >
-                                <Phone className="w-4 h-4 text-blue-200" />
-                                <span>817-768-0413</span>
-                                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                            </a>
-
-                            <a
-                                href="/contact"
-                                className="group inline-flex items-center gap-2 rounded-full px-7 py-4 text-[13.5px] font-bold tracking-[0.08em] uppercase text-zinc-200 bg-zinc-900/80 border border-zinc-700 hover:border-blue-500 hover:text-white hover:bg-zinc-800 transition-all duration-300 shadow-lg"
-                            >
-                                <span>Request an Estimate</span>
-                            </a>
-                        </motion.div>
 
                         {/* Image Swiper Pagination Dots */}
                         <div className="flex items-center gap-3 mt-10">

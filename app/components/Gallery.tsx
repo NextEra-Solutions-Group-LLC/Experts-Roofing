@@ -10,15 +10,15 @@ type Project = {
 };
 
 const projects: Project[] = [
-    { title: "Residential Reroof", subtitle: "Cedar Park, TX", src: "https://i.ibb.co/r2TvC36w/image.png" },
-    { title: "Storm Damage Repair", subtitle: "Round Rock, TX", src: "https://i.ibb.co/YTh52Lc8/image.png" },
-    { title: "Commercial Flat Roof", subtitle: "Austin, TX", src: "https://i.ibb.co/qLzqQSvR/image.png" },
-    { title: "Gutter Replacement", subtitle: "Leander, TX", src: "https://i.ibb.co/yBhxDnHc/image.png" },
-    { title: "Lakefront Home Roof", subtitle: "Lakeway, TX", src: "https://i.ibb.co/pv4kmXjD/image.png" },
+    { title: "Residential Reroof", subtitle: "Cedar Park, TX", src: "https://i.ibb.co/TMCZk9GJ/image.png" },
+    { title: "Storm Damage Repair", subtitle: "Round Rock, TX", src: "https://i.ibb.co/36Tkvk5/image.png" },
+    { title: "Commercial Flat Roof", subtitle: "Austin, TX", src: "https://i.ibb.co/twcQMYCk/image.png" },
+    { title: "Gutter Replacement", subtitle: "Leander, TX", src: "https://i.ibb.co/jmfkN9r/image.png" },
+    { title: "Lakefront Home Roof", subtitle: "Lakeway, TX", src: "https://i.ibb.co/bjm1dBR9/image.png" },
     { title: "Custom Fencing", subtitle: "Liberty Hill, TX", src: "https://i.ibb.co/Q3d0r758/image.png" },
-    { title: "Full Tear-Off & Reroof", subtitle: "Georgetown, TX", src: "https://i.ibb.co/sp4LSrnV/image.png" },
-    { title: "Emergency Tarping", subtitle: "Brushy Creek, TX", src: "https://i.ibb.co/Y4rGXbvm/image.png" },
-    { title: "Luxury Home Exterior", subtitle: "Barton Creek, TX", src: "https://i.ibb.co/3mnnDzWR/image.png" },
+    { title: "Full Tear-Off & Reroof", subtitle: "Georgetown, TX", src: "https://i.ibb.co/JjHB6dDW/image.png" },
+    { title: "Emergency Tarping", subtitle: "Brushy Creek, TX", src: "https://i.ibb.co/TDM1zyFs/image.png" },
+    { title: "Luxury Home Exterior", subtitle: "Barton Creek, TX", src: "https://i.ibb.co/bjm1dBR9/image.png" },
     { title: "Insurance Claim Reroof", subtitle: "Serenada, TX", src: "https://i.ibb.co/TxkM02w9/image.png" },
 ];
 
@@ -100,25 +100,26 @@ export default function ProjectGallery() {
                                             draggable={false}
                                         />
 
-                                        {/* Dark Gradient Overlay for Text Readability */}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C0F]/80 via-[#0B0C0F]/10 to-transparent" />
+                                        {/* Balanced Dark Gradient Overlay for Text Readability */}
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
 
                                         {/* Index Badge */}
-                                        <div className="absolute right-5 top-5 sm:right-8 sm:top-8 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-[#3b82f6]/40 bg-[#141519]/70 font-mono text-xs sm:text-sm font-bold text-[#60a5fa] backdrop-blur-md shadow-lg">
+                                        <div className="absolute right-5 top-5 sm:right-8 sm:top-8 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-[#3b82f6]/40 bg-[#141519]/70 font-mono text-xs sm:text-sm font-bold text-[#60a5fa] backdrop-blur-md shadow-lg z-10">
                                             {String(i + 1).padStart(2, "0")}
                                         </div>
 
-                                        {/* Caption / Text */}
-                                        <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between p-5 sm:p-10">
-                                            <div>
-                                                <h3 className="text-lg font-extrabold text-white sm:text-3xl tracking-tight mb-1">
-                                                    {project.title}
-                                                </h3>
-                                                <p className="text-xs sm:text-base text-[#9ca3af] font-medium">
-                                                    {project.subtitle}
-                                                </p>
-                                            </div>
-                                            <span className="hidden sm:inline-block rounded-full bg-[#3b82f6] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-lg transition-transform hover:scale-105">
+                                        {/* Caption / Text Centered Directly on Image without separate card background */}
+                                        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 sm:px-12 z-10">
+                                            <span className="inline-block text-[10px] sm:text-xs font-semibold tracking-[0.25em] uppercase text-blue-400 mb-2 drop-shadow">
+                                                Featured Project
+                                            </span>
+                                            <h3 className="text-3xl font-extrabold text-white sm:text-5xl tracking-tight mb-3 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
+                                                {project.title}
+                                            </h3>
+                                            <p className="text-base sm:text-xl text-zinc-200 font-medium mb-6 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+                                                {project.subtitle}
+                                            </p>
+                                            <span className="inline-block rounded-full bg-gradient-to-r from-[#2563eb] to-[#3b82f6] px-7 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-blue-500/40 transition-transform hover:scale-105 border border-blue-400/30">
                                                 View Project
                                             </span>
                                         </div>

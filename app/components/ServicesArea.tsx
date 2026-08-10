@@ -12,14 +12,14 @@ type CityPin = {
 };
 
 const CITIES: CityPin[] = [
-    { name: "Dallas", state: "TX", top: "42%", left: "58%", primary: true },
-    { name: "Fort Worth", state: "TX", top: "48%", left: "22%" },
-    { name: "Arlington", state: "TX", top: "58%", left: "40%" },
-    { name: "Plano", state: "TX", top: "18%", left: "64%" },
-    { name: "Irving", state: "TX", top: "40%", left: "44%" },
-    { name: "Frisco", state: "TX", top: "10%", left: "56%" },
-    { name: "McKinney", state: "TX", top: "8%", left: "72%" },
-    { name: "Denton", state: "TX", top: "10%", left: "28%" },
+    { name: "Dallas", state: "TX", top: "50%", left: "50%", primary: true },
+    { name: "Fort Worth", state: "TX", top: "56%", left: "24%" },
+    { name: "Arlington", state: "TX", top: "68%", left: "38%" },
+    { name: "Plano", state: "TX", top: "25%", left: "62%" },
+    { name: "Irving", state: "TX", top: "48%", left: "41%" },
+    { name: "Frisco", state: "TX", top: "15%", left: "53%" },
+    { name: "McKinney", state: "TX", top: "18%", left: "73%" },
+    { name: "Denton", state: "TX", top: "20%", left: "28%" },
 ];
 
 export default function ServiceArea() {
@@ -92,16 +92,16 @@ export default function ServiceArea() {
                             <rect width="100%" height="100%" fill="url(#dotgrid)" />
                         </svg>
 
-                        {/* soft radial glow behind Dallas */}
-                        <div className="absolute top-[42%] left-[58%] -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] rounded-full bg-[#3b82f6]/10 blur-[90px]" />
+                        {/* soft radial glow behind Dallas center */}
+                        <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] rounded-full bg-[#3b82f6]/10 blur-[90px]" />
 
                         {/* connecting lines from Dallas hub to satellite cities */}
-                        <svg className="absolute inset-0 w-full h-full">
+                        <svg className="absolute inset-0 w-full h-full pointer-events-none">
                             {CITIES.filter((c) => !c.primary).map((c) => (
                                 <line
                                     key={c.name}
-                                    x1="58%"
-                                    y1="42%"
+                                    x1="50%"
+                                    y1="50%"
                                     x2={c.left}
                                     y2={c.top}
                                     stroke="#3b82f6"
@@ -120,14 +120,14 @@ export default function ServiceArea() {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.15 + i * 0.08, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                                className="absolute -translate-x-1/2 -translate-y-full flex flex-col items-center"
+                                className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group z-30 cursor-pointer"
                                 style={{ top: city.top, left: city.left }}
                             >
-                                {/* label */}
+                                {/* label (Centered nicely and perfectly balanced above/around the pin) */}
                                 <div
-                                    className={`mb-1.5 rounded-lg px-2.5 py-1 text-[10.5px] font-semibold tracking-wide whitespace-nowrap backdrop-blur-md border ${city.primary
-                                        ? "bg-[#3b82f6]/20 border-[#3b82f6]/50 text-[#ffffff]"
-                                        : "bg-[#1A1B20]/90 border-[#3b82f6]/20 text-[#d1d5db]"
+                                    className={`mb-2 rounded-xl px-3.5 py-1.5 text-[11.5px] font-semibold tracking-wide whitespace-nowrap backdrop-blur-xl border transition-all duration-300 group-hover:scale-105 group-hover:border-[#3b82f6] shadow-xl ${city.primary
+                                        ? "bg-[#3b82f6]/30 border-[#3b82f6]/60 text-white shadow-blue-500/20"
+                                        : "bg-[#1A1B20]/95 border-[#3b82f6]/30 text-[#e5e7eb]"
                                         }`}
                                 >
                                     {city.name}, {city.state}
@@ -136,16 +136,16 @@ export default function ServiceArea() {
                                 {/* pin */}
                                 <div className="relative flex items-center justify-center">
                                     {city.primary && (
-                                        <span className="absolute w-9 h-9 rounded-full bg-[#3b82f6]/30 animate-ping" />
+                                        <span className="absolute w-10 h-10 rounded-full bg-[#3b82f6]/40 animate-ping pointer-events-none" />
                                     )}
                                     <span
-                                        className={`relative flex items-center justify-center rounded-full border ${city.primary
-                                            ? "w-8 h-8 bg-gradient-to-br from-[#2563eb] to-[#3b82f6] border-[#93c5fd]/60 shadow-lg shadow-blue-500/30"
-                                            : "w-6 h-6 bg-[#1A1B20] border-[#3b82f6]/40"
+                                        className={`relative flex items-center justify-center rounded-full border transition-transform duration-300 group-hover:scale-110 ${city.primary
+                                            ? "w-9 h-9 bg-gradient-to-br from-[#2563eb] to-[#3b82f6] border-[#93c5fd]/80 shadow-lg shadow-blue-500/40"
+                                            : "w-7 h-7 bg-[#1A1B20] border-[#3b82f6]/50 shadow-md shadow-black/50"
                                             }`}
                                     >
                                         <MapPin
-                                            className={city.primary ? "w-4 h-4 text-[#ffffff]" : "w-3 h-3 text-[#60a5fa]"}
+                                            className={city.primary ? "w-4 h-4 text-[#ffffff]" : "w-3.5 h-3.5 text-[#60a5fa]"}
                                             strokeWidth={2.5}
                                             fill={city.primary ? "currentColor" : "none"}
                                         />
@@ -160,7 +160,7 @@ export default function ServiceArea() {
                         {CITIES.map((city) => (
                             <span
                                 key={city.name}
-                                className="inline-flex items-center gap-1.5 rounded-full border border-[#3b82f6]/20 bg-[#141519]/70 px-3.5 py-1.5 text-[11.5px] font-medium text-[#9ca3af]"
+                                className="inline-flex items-center gap-1.5 rounded-full border border-[#3b82f6]/20 bg-[#141519]/70 px-3.5 py-1.5 text-[11.5px] font-medium text-[#9ca3af] transition-colors hover:border-[#3b82f6]/50 hover:text-white"
                             >
                                 <MapPin className="w-3 h-3 text-[#60a5fa]" strokeWidth={2} />
                                 {city.name}, {city.state}

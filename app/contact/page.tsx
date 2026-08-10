@@ -14,7 +14,6 @@ interface RoofingContactProps {
     phone?: string;
     email?: string;
     address?: string;
-    mapQuery?: string;
     hours?: Hour[];
     onSubmit?: (data: { name: string; phone: string; email: string; message: string }) => void;
 }
@@ -40,10 +39,9 @@ function Icon({ path }: { path: string }) {
 export default function RoofingContactSectionWhite({
     heading = 'Contact Us',
     intro = "If you have any questions, please feel free to get in touch with us by phone, text, email, or the form below — a real roofer will get back to you.",
-    phone = '817-768-0413',
-    email = 'raul.gill.2020@gmail.com',
+    phone = '347-7663-669',
+    email = 'contact@expertsroofing.us',
     address = 'Dallas, TX',
-    mapQuery = 'Dallas, TX',
     hours = defaultHours,
     onSubmit,
 }: RoofingContactProps) {
@@ -62,24 +60,10 @@ export default function RoofingContactSectionWhite({
     return (
         <div className="relative w-full text-neutral-900 font-sans">
 
-            {/* 1. Textless Sticky CTA Section */}
-            <div className="sticky top-0 z-0 h-screen w-full bg-[url('https://i.ibb.co.com/1fX3G5WK/image.png')] bg-cover bg-center flex items-center justify-center">
-                <div className="absolute inset-0 bg-neutral-950/60"></div>
-
-                <div className="relative z-10 text-center px-6">
-                    <a
-                        href="#contact"
-                        className="inline-block bg-[#1d4ed8] hover:bg-[#1e40af] text-white font-black uppercase text-xs md:text-sm tracking-wide py-4 px-9 rounded-xl transition-all shadow-xl hover:-translate-y-1"
-                    >
-                        Get In Touch ↓
-                    </a>
-                </div>
-            </div>
-
-            {/* 2. Contact Section (Pure White Aesthetic) */}
+            {/* Contact Section (Pure White Aesthetic with significantly increased top padding to push content further down, and darker gray background) */}
             <section
                 id="contact"
-                className="relative z-10 w-full bg-[#f8fafc] py-20 md:py-28 px-6 rounded-t-[40px] shadow-[0_-30px_60px_rgba(0,0,0,0.15)] border-t border-slate-200"
+                className="relative z-10 w-full bg-slate-200 pt-48 pb-20 md:pt-56 md:pb-28 px-6 border-t border-slate-300"
             >
                 <div className="max-w-6xl mx-auto">
 
@@ -106,7 +90,7 @@ export default function RoofingContactSectionWhite({
                     </div>
 
                     {/* Form & Info Grid */}
-                    <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-6 mb-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-6">
 
                         {/* Form Panel */}
                         <motion.div
@@ -244,24 +228,9 @@ export default function RoofingContactSectionWhite({
                                 </ul>
                             </div>
                         </motion.div>
+
                     </div>
 
-                    {/* Map Section */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
-                        className="w-full h-[350px] rounded-2xl overflow-hidden border border-slate-200 shadow-lg"
-                    >
-                        <iframe
-                            title="Service area map"
-                            className="w-full h-full border-0"
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                            src={`https://www.google.com/maps?q=${encodeURIComponent(mapQuery)}&output=embed`}
-                        />
-                    </motion.div>
                 </div>
             </section>
         </div>
