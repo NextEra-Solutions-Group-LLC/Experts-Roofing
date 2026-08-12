@@ -40,8 +40,8 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className="relative min-h-screen flex items-center pt-48 lg:pt-56 pb-24 overflow-hidden bg-[#05070B] text-white">
-            {/* Background Swiper Images with Smooth Fade Transition */}
+        <section className="relative min-h-screen flex items-center pt-48 lg:pt-56 pb-24 overflow-hidden bg-[#0F1117] text-zinc-100">
+            {/* Background Swiper Images with Smooth Fade Transition & Rich Dark Overlays */}
             <div className="absolute inset-0 z-0">
                 <AnimatePresence mode="wait">
                     <motion.img
@@ -55,28 +55,40 @@ export default function Hero() {
                         className="absolute inset-0 w-full h-full object-cover"
                     />
                 </AnimatePresence>
-                {/* Lighter Professional Overlay Gradients */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#05070B]/90 via-[#05070B]/60 to-[#05070B]/20" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#05070B] via-transparent to-[#05070B]/40" />
+                {/* Professional Deep Dark Overlay Gradients */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0B0C0F]/95 via-[#0B0C0F]/85 to-[#0B0C0F]/60" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C0F] via-transparent to-[#0B0C0F]/70" />
             </div>
 
-            {/* Content Container */}
-            <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-12 w-full">
-                <div className="grid lg:grid-cols-2 gap-14 items-center">
+            {/* Ambient Background Glow */}
+            <div className="pointer-events-none absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#2563eb]/[0.08] blur-[140px] z-10" />
 
+            {/* Content Container */}
+            <div className="relative z-20 mx-auto max-w-7xl px-6 lg:px-12 w-full">
+                <div className="grid lg:grid-cols-2 gap-14 items-center">
                     {/* Left Column: Copy Only */}
                     <div>
                         <motion.div
                             initial={{ opacity: 0, y: 24 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                            className="inline-flex items-center gap-2.5 rounded-full border border-blue-500/30 bg-blue-500/10 px-4.5 py-1.5 mb-7 shadow-[0_0_15px_rgba(59,130,246,0.2)]"
+                            className="inline-flex items-center gap-2.5 rounded-full border border-blue-500/30 bg-blue-500/10 px-4.5 py-1.5 mb-7 backdrop-blur-md"
                         >
                             <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
                             <span className="text-[11.5px] font-bold tracking-[0.28em] uppercase text-blue-400">
                                 20 Years of Experience
                             </span>
                         </motion.div>
+
+                        {/* Slogan above main title */}
+                        <motion.p
+                            initial={{ opacity: 0, y: 24 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.06, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                            className="text-blue-400 font-semibold text-sm tracking-wider uppercase mb-2"
+                        >
+                            #1 RATED CONTRACTOR IN Dallas, Texas
+                        </motion.p>
 
                         <motion.h1
                             initial={{ opacity: 0, y: 24 }}
@@ -86,7 +98,7 @@ export default function Hero() {
                         >
                             EXPERTS
                             <br />
-                            <span className="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-300 bg-clip-text text-transparent drop-shadow-[0_4px_20px_rgba(59,130,246,0.3)]">
+                            <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-400 bg-clip-text text-transparent">
                                 ROOFING
                             </span>
                         </motion.h1>
@@ -106,7 +118,7 @@ export default function Hero() {
                                 <button
                                     key={idx}
                                     onClick={() => setCurrentImage(idx)}
-                                    className={`h-2 rounded-full transition-all duration-300 ${currentImage === idx ? "w-8 bg-blue-500" : "w-2 bg-zinc-600 hover:bg-zinc-400"
+                                    className={`h-2 rounded-full transition-all duration-300 ${currentImage === idx ? "w-8 bg-blue-500" : "w-2 bg-zinc-700 hover:bg-zinc-600"
                                         }`}
                                     aria-label={`Go to slide ${idx + 1}`}
                                 />
@@ -114,36 +126,8 @@ export default function Hero() {
                         </div>
                     </div>
 
-                    {/* Right Column: Decorative Visual Card */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                        className="hidden lg:block relative"
-                    >
-                        <div className="relative p-8 rounded-[32px] bg-zinc-900/40 backdrop-blur-xl border border-blue-500/20 shadow-[0_30px_90px_-20px_rgba(0,0,0,0.8)]">
-                            <div className="absolute -top-4 -right-4 w-20 h-20 border-t-2 border-r-2 border-blue-500/50 rounded-tr-[32px]" />
-                            <div className="absolute -bottom-4 -left-4 w-20 h-20 border-b-2 border-l-2 border-blue-500/50 rounded-bl-[32px]" />
-
-                            <span className="text-blue-500 font-bold text-xs tracking-widest uppercase mb-2 block">Certified Excellence</span>
-                            <h3 className="text-2xl font-bold text-white mb-4">Trusted Roof Protection Across Texas</h3>
-                            <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                                Our team delivers robust residential and commercial roofing solutions backed by long-standing craftsmanship and robust material warranties.
-                            </p>
-                            <div className="flex items-center gap-4 pt-4 border-t border-zinc-800">
-                                <div>
-                                    <h4 className="text-2xl font-extrabold text-white">20+</h4>
-                                    <p className="text-xs text-zinc-400">Years Experience</p>
-                                </div>
-                                <div className="w-[1px] h-8 bg-zinc-800" />
-                                <div>
-                                    <h4 className="text-2xl font-extrabold text-white">100%</h4>
-                                    <p className="text-xs text-zinc-400">Satisfaction Rate</p>
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
-
+                    {/* Right Column: Empty space to balance the layout */}
+                    <div className="hidden lg:block relative"></div>
                 </div>
 
                 {/* ---------- Feature Cards (House Shape Top Design) ---------- */}
@@ -155,28 +139,23 @@ export default function Hero() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-60px" }}
                             transition={{ delay: 0.12 * i, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                            className="group relative bg-white rounded-3xl p-8 pt-10 text-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-blue-100 hover:border-blue-500 transition-all duration-400 hover:-translate-y-1.5"
+                            className="group relative bg-[#141519]/90 backdrop-blur-xl rounded-3xl p-8 pt-10 text-zinc-100 shadow-[0_20px_50px_rgba(0,0,0,0.4)] border border-white/10 hover:border-blue-500/50 transition-all duration-400 hover:-translate-y-1.5"
                         >
                             {/* House Silhouette Roof Top Element */}
-                            <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-20 h-10 bg-white border-t border-x border-blue-100 rounded-t-xl flex items-end justify-center pb-2 shadow-sm group-hover:border-blue-500 transition-colors">
-                                <div className="w-4 h-2 bg-zinc-200 rounded-sm" />
+                            <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-20 h-10 bg-[#141519] border-t border-x border-white/10 rounded-t-xl flex items-end justify-center pb-2 shadow-inner group-hover:border-blue-500/50 transition-colors">
+                                <div className="w-4 h-2 bg-zinc-700 rounded-sm" />
                             </div>
 
-                            <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 mx-auto mb-6 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
-                                <f.icon className="w-7 h-7 text-[#2563EB] group-hover:text-white transition-colors" strokeWidth={1.8} />
+                            <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 mx-auto mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                                <f.icon className="w-7 h-7 text-blue-400 group-hover:text-white transition-colors" strokeWidth={1.8} />
                             </div>
 
-                            <h3 className="text-zinc-900 font-bold text-lg text-center mb-3">
-                                {f.title}
-                            </h3>
+                            <h3 className="text-white font-bold text-lg text-center mb-3 group-hover:text-blue-400 transition-colors">{f.title}</h3>
 
-                            <p className="text-zinc-600 text-[14px] leading-relaxed text-center font-normal">
-                                {f.desc}
-                            </p>
+                            <p className="text-zinc-400 text-[14px] leading-relaxed text-center font-normal">{f.desc}</p>
                         </motion.div>
                     ))}
                 </div>
-
             </div>
         </section>
     );

@@ -8,8 +8,8 @@ const SERVICES = [
         number: "01",
         title: "Roof Leak Repairs",
         description: "We diagnose and repair roof leaks quickly to prevent water damage and protect your home from further issues.",
-        // Unsplash image for Roof Leak Repair
-        image: "https://i.ibb.co/dwSgZ8LG/image.png",
+
+        image: "https://i.ibb.co.com/bjm1dBR9/image.png",
         color: "from-[#3b82f6] to-[#1d4ed8]",
         border: "border-[#3b82f6]/30",
     },
@@ -17,8 +17,8 @@ const SERVICES = [
         number: "02",
         title: "Rotted Plywood Repairs",
         description: "We remove damaged shingles and replace rotted plywood to restore the strength and integrity of your roof structure.",
-        // Unsplash image for Rotted Plywood Repair (Construction/Wood focus)
-        image: "https://i.ibb.co/nNZtQRj0/image.png",
+
+        image: "https://i.ibb.co.com/twcQMYCk/image.png",
         color: "from-[#60a5fa] to-[#2563eb]",
         border: "border-[#60a5fa]/30",
     },
@@ -26,8 +26,7 @@ const SERVICES = [
         number: "03",
         title: "Full Roof Replacement",
         description: "Complete roof replacements using quality materials for long-lasting protection, improved curb appeal, and peace of mind.",
-        // Unsplash image for Full Roof Replacement (New roof installation)
-        image: "https://i.ibb.co/DPkwyVxm/image.png",
+        image: "https://i.ibb.co.com/whLC0NLq/image.png",
         color: "from-[#93c5fd] to-[#3b82f6]",
         border: "border-[#93c5fd]/30",
     },
@@ -40,7 +39,7 @@ export default function ServicesSection() {
             <div className="absolute inset-0 z-0 overflow-hidden">
                 <div className="sticky top-0 h-screen w-full">
                     <img
-                        src="https://i.ibb.co/dwSgZ8LG/image.png"
+                        src="https://i.ibb.co.com/TMCZk9GJ/image.png"
                         alt="Roofing background"
                         className="w-full h-full object-cover object-center"
                     />

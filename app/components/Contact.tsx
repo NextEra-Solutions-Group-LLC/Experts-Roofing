@@ -38,7 +38,7 @@ function Icon({ path }: { path: string }) {
 
 export default function RoofingContactSectionWhite({
     heading = 'Contact Us',
-    intro = "If you have any questions, please feel free to get in touch with us by phone, text, email, or the form below — a real roofer will get back to you.",
+    intro = "",
     phone = '347-7663-669',
     email = 'contact@expertsroofing.us',
     address = 'Dallas, TX',

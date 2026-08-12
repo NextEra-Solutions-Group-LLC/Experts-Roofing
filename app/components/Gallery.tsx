@@ -58,7 +58,7 @@ export default function ProjectGallery() {
             style={{ height: `${projects.length * 100}vh` }}
         >
             <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col">
-                {/* ---------- হেডিং সেকশন ( ছবির উপরে ) ---------- */}
+
                 <div className="relative z-[100] flex flex-col items-center pt-12 sm:pt-16 pb-4 sm:pb-8 text-center bg-[#0B0C0F]">
                     <span className="inline-block text-[11px] sm:text-xs font-semibold tracking-[0.28em] uppercase text-[#3b82f6] bg-[#3b82f6]/10 px-4 py-1.5 rounded-full border border-[#3b82f6]/30 mb-3">
                         Our Work
@@ -68,7 +68,7 @@ export default function ProjectGallery() {
                     </h2>
                 </div>
 
-                {/* ---------- গ্যালারি স্লাইডার ---------- */}
+
                 <div className="relative flex-grow w-full h-full">
                     {projects.map((project, i) => {
                         const vhSafe = vh || 1;
@@ -108,7 +108,7 @@ export default function ProjectGallery() {
                                             {String(i + 1).padStart(2, "0")}
                                         </div>
 
-                                        {/* Caption / Text Centered Directly on Image without separate card background */}
+
                                         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 sm:px-12 z-10">
                                             <span className="inline-block text-[10px] sm:text-xs font-semibold tracking-[0.25em] uppercase text-blue-400 mb-2 drop-shadow">
                                                 Featured Project

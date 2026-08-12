@@ -74,16 +74,16 @@ function Hex({ item, index }: { item: FeatureItem; index: number }) {
             style={{ width: HEX_W, height: HEX_H }}
         >
             <div
-                className="absolute inset-0 bg-gradient-to-b from-[#141519]/90 to-[#0D0E11]/90 backdrop-blur-xl border border-[#3b82f6]/20 group-hover:border-[#3b82f6]/60 transition-colors duration-400 flex flex-col items-center justify-center text-center px-7"
+                className="absolute inset-0 bg-white/90 backdrop-blur-xl border border-zinc-200 group-hover:border-blue-400 transition-colors duration-400 flex flex-col items-center justify-center text-center px-7 shadow-sm group-hover:shadow-[0_15px_30px_-10px_rgba(37,99,235,0.12)]"
                 style={{ clipPath: hexClip }}
             >
-                <div className="w-12 h-12 mb-3 rounded-xl bg-[#3b82f6]/10 border border-[#3b82f6]/30 flex items-center justify-center text-[#60a5fa] group-hover:bg-[#3b82f6] group-hover:text-white transition-all duration-300">
+                <div className="w-12 h-12 mb-3 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-[#2563eb] group-hover:bg-[#2563eb] group-hover:text-white transition-all duration-300">
                     <Icon className="w-5.5 h-5.5" strokeWidth={1.9} />
                 </div>
-                <h3 className="text-white font-semibold text-[13.5px] leading-snug mb-1.5 group-hover:text-[#60a5fa] transition-colors">
+                <h3 className="text-zinc-900 font-semibold text-[13.5px] leading-snug mb-1.5 group-hover:text-[#2563eb] transition-colors">
                     {item.title}
                 </h3>
-                <p className="text-[#9ca3af] text-[10.5px] leading-relaxed max-w-[150px]">
+                <p className="text-zinc-600 text-[10.5px] leading-relaxed max-w-[150px]">
                     {item.description}
                 </p>
             </div>
@@ -93,8 +93,8 @@ function Hex({ item, index }: { item: FeatureItem; index: number }) {
 
 export default function WhyChooseUs() {
     return (
-        <section className="relative bg-[#0B0C0F] py-24 lg:py-32 overflow-hidden">
-            {/* Sticky Background Image with Dark Professional Overlays matching your other sections */}
+        <section className="relative bg-[#ffffff] py-24 lg:py-32 overflow-hidden">
+            {/* Sticky Background Image with Light Professional Overlays matching your other sections */}
             <div className="absolute inset-0 z-0 overflow-hidden">
                 <div className="sticky top-0 h-screen w-full">
                     <img
@@ -102,12 +102,12 @@ export default function WhyChooseUs() {
                         alt="Why choose us background"
                         className="w-full h-full object-cover object-center"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#0B0C0F] via-[#0B0C0F]/90 to-[#0B0C0F]/70" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C0F] via-transparent to-[#0B0C0F]" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#ffffff]/95 via-[#ffffff]/80 to-[#ffffff]/60" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#ffffff] via-transparent to-[#ffffff]/30" />
                 </div>
             </div>
 
-            <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#3b82f6]/[0.05] blur-[160px] z-10" />
+            <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-blue-500/[0.03] blur-[160px] z-10" />
 
             <div className="relative z-20 mx-auto max-w-7xl px-6 lg:px-10">
                 {/* ---------- Header ---------- */}
@@ -118,17 +118,17 @@ export default function WhyChooseUs() {
                     transition={{ duration: 0.6 }}
                     className="text-center max-w-2xl mx-auto mb-16 lg:mb-20"
                 >
-                    <span className="inline-flex items-center gap-2 rounded-full border border-[#3b82f6]/30 bg-[#3b82f6]/5 px-4 py-1.5 text-[11px] font-semibold tracking-[0.28em] uppercase text-[#3b82f6] mb-4">
+                    <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-1.5 text-[11px] font-semibold tracking-[0.28em] uppercase text-[#2563eb] mb-4">
                         <Sparkles className="w-3.5 h-3.5" strokeWidth={2} />
                         DFW's Top Rated Roofing Contractor
                     </span>
-                    <h2 className="text-white font-extrabold text-3xl sm:text-5xl tracking-tight mb-4">
+                    <h2 className="text-[#111827] font-extrabold text-3xl sm:text-5xl tracking-tight mb-4">
                         Why Choose{" "}
-                        <span className="text-[#3b82f6]">
+                        <span className="text-[#2563eb]">
                             Us
                         </span>
                     </h2>
-                    <p className="text-[#9ca3af] text-sm sm:text-base leading-relaxed">
+                    <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
                         Delivering unmatched precision, reliability, and craftsmanship on
                         every roof we touch.
                     </p>
@@ -167,15 +167,15 @@ export default function WhyChooseUs() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.06, duration: 0.45 }}
-                                className="rounded-2xl border border-[#3b82f6]/20 bg-[#141519]/90 backdrop-blur-xl p-5 flex flex-col items-center text-center group"
+                                className="rounded-2xl border border-zinc-200 bg-white/90 backdrop-blur-xl p-5 flex flex-col items-center text-center group shadow-sm"
                             >
-                                <div className="w-11 h-11 mb-3 rounded-xl bg-[#3b82f6]/10 border border-[#3b82f6]/30 flex items-center justify-center text-[#60a5fa] group-hover:bg-[#3b82f6] group-hover:text-white transition-all duration-300">
+                                <div className="w-11 h-11 mb-3 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-[#2563eb] group-hover:bg-[#2563eb] group-hover:text-white transition-all duration-300">
                                     <Icon className="w-5 h-5" strokeWidth={1.9} />
                                 </div>
-                                <h3 className="text-white font-semibold text-[13.5px] mb-1.5 group-hover:text-[#60a5fa] transition-colors">
+                                <h3 className="text-zinc-900 font-semibold text-[13.5px] mb-1.5 group-hover:text-[#2563eb] transition-colors">
                                     {item.title}
                                 </h3>
-                                <p className="text-[#9ca3af] text-[11px] leading-relaxed">
+                                <p className="text-zinc-600 text-[11px] leading-relaxed">
                                     {item.description}
                                 </p>
                             </motion.div>

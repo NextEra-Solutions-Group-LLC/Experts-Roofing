@@ -11,7 +11,7 @@ const NAV_LINKS = [
     { label: "About Us", href: "/about" },
     { label: "Services", href: "/services" },
     { label: "Our Projects", href: "/gallery" },
-    { label: "Contact Us", href: "/contact" },
+    { label: "ServiceArea", href: "/area" },
 ];
 
 export default function Navbar() {
@@ -34,51 +34,48 @@ export default function Navbar() {
 
     return (
         <header className="fixed top-0 left-0 right-0 z-50 font-sans">
-            {/* ---------- Ultra VIP Top Info Bar (Hides on Scroll) ---------- */}
-            <AnimatePresence initial={false}>
-                {!scrolled && (
-                    <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                        className="overflow-hidden bg-[#05070B] border-b border-[#3B82F6]/20 shadow-[inset_0_-1px_0_rgba(59,130,246,0.1)]"
-                    >
-                        <div className="mx-auto max-w-7xl px-6 lg:px-12 flex items-center justify-between h-11 text-[13px] tracking-wide text-zinc-300">
-                            <div className="flex items-center gap-6">
-                                <a
-                                    href="tel:3477663669"
-                                    className="flex items-center gap-2 hover:text-[#60A5FA] transition-colors duration-300 group"
-                                >
-                                    <div className="w-6 h-6 rounded-full bg-[#3B82F6]/10 border border-[#3B82F6]/30 flex items-center justify-center group-hover:border-[#60A5FA] transition-colors">
-                                        <Phone className="w-3.5 h-3.5 text-[#3B82F6]" strokeWidth={2.2} />
-                                    </div>
-                                    <div className="flex flex-col">
-                                        <span className="font-bold text-zinc-100 text-[13.5px] leading-tight">347-ROOF-NOW</span>
-                                        <span className="text-[10px] text-zinc-400 font-medium tracking-normal leading-tight">347-7663-669</span>
-                                    </div>
-                                </a>
-                                <span className="hidden sm:block w-px h-4 bg-zinc-800" />
-                                <a
-                                    href="mailto:contact@expertsroofing.us"
-                                    className="hidden sm:flex items-center gap-2 hover:text-[#60A5FA] transition-colors duration-300 group"
-                                >
-                                    <div className="w-6 h-6 rounded-full bg-[#3B82F6]/10 border border-[#3B82F6]/30 flex items-center justify-center group-hover:border-[#60A5FA] transition-colors">
-                                        <Mail className="w-3.5 h-3.5 text-[#3B82F6]" strokeWidth={2.2} />
-                                    </div>
-                                    <span className="font-medium text-zinc-200">contact@expertsroofing.us</span>
-                                </a>
-                            </div>
-                            <div className="flex items-center gap-2 text-zinc-400 bg-zinc-900/60 px-3.5 py-1 rounded-full border border-zinc-800">
-                                <MapPin className="w-3.5 h-3.5 text-[#3B82F6]" strokeWidth={2.2} />
-                                <span className="font-semibold text-zinc-200">Dallas, TX</span>
-                            </div>
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+            {/* ---------- Permanent Top Info Bar (Stays Sticky) ---------- */}
+            <div className="bg-[#05070B] border-b border-[#3B82F6]/20 shadow-[inset_0_-1px_0_rgba(59,130,246,0.1)]">
+                <div className="mx-auto max-w-7xl px-6 lg:px-12 flex items-center justify-end sm:justify-between h-11 text-[13px] tracking-wide text-zinc-300">
 
+                    {/* Left side: Address (Hidden on very small screens) */}
+                    <div className="hidden sm:flex items-center gap-2 text-zinc-400 bg-zinc-900/60 px-3.5 py-1 rounded-full border border-zinc-800">
+                        <MapPin className="w-3.5 h-3.5 text-[#3B82F6]" strokeWidth={2.2} />
+                        <span className="font-semibold text-zinc-200">Dallas, TX</span>
+                    </div>
 
+                    {/* Right side: Contact Info & Link */}
+                    <div className="flex items-center gap-6">
+                        {/* Email replaced with Contact Us Link */}
+                        <Link
+                            href="/contact"
+                            className="flex items-center gap-2 hover:text-[#60A5FA] transition-colors duration-300 group"
+                        >
+                            <div className="w-6 h-6 rounded-full bg-[#3B82F6]/10 border border-[#3B82F6]/30 flex items-center justify-center group-hover:border-[#60A5FA] transition-colors">
+                                <Mail className="w-3.5 h-3.5 text-[#3B82F6]" strokeWidth={2.2} />
+                            </div>
+                            <span className="font-medium text-zinc-200 uppercase tracking-wider">CONTACT US</span>
+                        </Link>
+
+                        <span className="w-px h-4 bg-zinc-800" />
+
+                        {/* Phone Number moved here */}
+                        <a
+                            href="tel:3477663669"
+                            className="flex items-center gap-2 hover:text-[#60A5FA] transition-colors duration-300 group"
+                        >
+                            <div className="w-6 h-6 rounded-full bg-[#3B82F6]/10 border border-[#3B82F6]/30 flex items-center justify-center group-hover:border-[#60A5FA] transition-colors">
+                                <Phone className="w-3.5 h-3.5 text-[#3B82F6]" strokeWidth={2.2} />
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <span className="font-bold text-zinc-100 text-[13.5px]">347-ROOF-NOW</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            {/* ---------- Main Navigation Section ---------- */}
             <motion.div
                 animate={{
                     paddingTop: scrolled ? 16 : 24,
@@ -95,10 +92,10 @@ export default function Navbar() {
 
                 <div className="mx-auto max-w-7xl px-6 lg:px-12 flex items-center justify-between">
 
-                    {/* Logo Section with Larger Size & Modern Bottom Kona/Extension */}
+                    {/* Logo Section */}
                     <div className="relative group">
                         <Link href="/" className="flex items-center py-2">
-                            <div className="relative w-64 h-16 sm:w-72 sm:h-20 flex items-center">
+                            <div className="relative w-56 h-14 sm:w-64 sm:h-16 flex items-center">
                                 <Image
                                     src="https://i.ibb.co/0jyqw7Kr/image.png"
                                     alt="Experts Roofing Logo"

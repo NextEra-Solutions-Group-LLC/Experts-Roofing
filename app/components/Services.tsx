@@ -9,34 +9,34 @@ const SERVICES = [
         title: "Roof Leak Repairs",
         description: "We diagnose and repair roof leaks quickly to prevent water damage and protect your home from further issues.",
         icon: Droplet,
-        color: "from-[#3b82f6] to-[#1d4ed8]",
-        border: "border-[#3b82f6]/30",
-        bgGlow: "bg-[#3b82f6]/10",
+        color: "from-[#2563eb] to-[#1d4ed8]",
+        border: "border-blue-200",
+        bgGlow: "bg-blue-50",
     },
     {
         number: "02",
         title: "Rotted Plywood Repairs",
         description: "We remove damaged shingles and replace rotted plywood to restore the strength and integrity of your roof structure.",
         icon: ShieldAlert,
-        color: "from-[#60a5fa] to-[#2563eb]",
-        border: "border-[#60a5fa]/30",
-        bgGlow: "bg-[#60a5fa]/10",
+        color: "from-[#3b82f6] to-[#2563eb]",
+        border: "border-blue-200",
+        bgGlow: "bg-blue-50",
     },
     {
         number: "03",
         title: "Full Roof Replacement",
         description: "Complete roof replacements using quality materials for long-lasting protection, improved curb appeal, and peace of mind.",
         icon: Home,
-        color: "from-[#93c5fd] to-[#3b82f6]",
-        border: "border-[#93c5fd]/30",
-        bgGlow: "bg-[#93c5fd]/10",
+        color: "from-[#60a5fa] to-[#3b82f6]",
+        border: "border-blue-200",
+        bgGlow: "bg-blue-50",
     },
 ];
 
 export default function ServicesSection() {
     return (
-        <section className="relative bg-[#0B0C0F] py-24 lg:py-32 overflow-hidden">
-            {/* Sticky Background Image matching previous sections */}
+        <section className="relative bg-[#ffffff] py-24 lg:py-32 overflow-hidden">
+            {/* Sticky Background Image with Light Professional Overlays */}
             <div className="absolute inset-0 z-0 overflow-hidden">
                 <div className="sticky top-0 h-screen w-full">
                     <img
@@ -44,12 +44,12 @@ export default function ServicesSection() {
                         alt="Roofing background"
                         className="w-full h-full object-cover object-center"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#0B0C0F] via-[#0B0C0F]/90 to-[#0B0C0F]/70" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C0F] via-transparent to-[#0B0C0F]" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#ffffff]/95 via-[#ffffff]/80 to-[#ffffff]/60" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#ffffff] via-transparent to-[#ffffff]/30" />
                 </div>
             </div>
 
-            <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-[#3b82f6]/[0.04] blur-[150px] z-10" />
+            <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-blue-500/[0.03] blur-[150px] z-10" />
 
             <div className="relative z-20 mx-auto max-w-7xl px-6 lg:px-10">
                 {/* Section Header */}
@@ -60,13 +60,13 @@ export default function ServicesSection() {
                     transition={{ duration: 0.6 }}
                     className="text-center max-w-3xl mx-auto mb-20"
                 >
-                    <span className="inline-block text-[12px] font-semibold tracking-[0.3em] uppercase text-[#3b82f6] mb-4">
+                    <span className="inline-block text-[12px] font-semibold tracking-[0.3em] uppercase text-[#2563eb] mb-4">
                         OUR SERVICES
                     </span>
-                    <h2 className="text-[#ffffff] font-extrabold text-3xl sm:text-[2.6rem] leading-[1.12] tracking-tight mb-4">
+                    <h2 className="text-[#111827] font-extrabold text-3xl sm:text-[2.6rem] leading-[1.12] tracking-tight mb-4">
                         Your Roofing Expert
                     </h2>
-                    <p className="text-[#9ca3af] text-base sm:text-lg tracking-wide uppercase font-medium">
+                    <p className="text-[#6b7280] text-base sm:text-lg tracking-wide uppercase font-medium">
                         Elevating your property&apos;s aesthetics, one step at a time
                     </p>
                 </motion.div>
@@ -83,7 +83,7 @@ export default function ServicesSection() {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: index * 0.15 }}
                                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                                className={`relative group rounded-[2.5xl] border ${service.border} bg-[#141519]/85 backdrop-blur-xl p-8 sm:p-10 flex flex-col justify-between hover:border-[#3b82f6]/60 transition-colors duration-500 shadow-2xl overflow-hidden`}
+                                className={`relative group rounded-[2.5xl] border ${service.border} bg-white/90 backdrop-blur-xl p-8 sm:p-10 flex flex-col justify-between hover:border-blue-400 transition-colors duration-500 shadow-xl overflow-hidden`}
                                 style={{
                                     clipPath: "polygon(0% 12%, 12% 0%, 88% 0%, 100% 12%, 100% 88%, 88% 100%, 12% 100%, 0% 88%)"
                                 }}
@@ -96,32 +96,32 @@ export default function ServicesSection() {
                                     <div className="flex items-center justify-between mb-8">
                                         <motion.div
                                             whileHover={{ rotate: 10, scale: 1.05 }}
-                                            className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center text-white shadow-lg shadow-blue-500/25`}
+                                            className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center text-white shadow-lg shadow-blue-500/20`}
                                         >
                                             <IconComponent className="w-7 h-7" strokeWidth={2} />
                                         </motion.div>
-                                        <span className="text-3xl font-extrabold text-white/20 font-mono">
+                                        <span className="text-3xl font-extrabold text-zinc-300 font-mono">
                                             {service.number}
                                         </span>
                                     </div>
 
                                     {/* Title & Description */}
-                                    <h3 className="text-[#ffffff] font-bold text-xl sm:text-2xl mb-4 leading-snug">
+                                    <h3 className="text-[#111827] font-bold text-xl sm:text-2xl mb-4 leading-snug">
                                         {service.title}
                                     </h3>
-                                    <p className="text-[#9ca3af] text-[15px] leading-relaxed mb-8">
+                                    <p className="text-[#4b5563] text-[15px] leading-relaxed mb-8">
                                         {service.description}
                                     </p>
                                 </div>
 
                                 {/* Learn More Action Link with Hover Icon Motion */}
-                                <div className="relative z-10 pt-6 border-t border-[#3b82f6]/15">
+                                <div className="relative z-10 pt-6 border-t border-zinc-100">
                                     <a
                                         href="#learn-more"
-                                        className="inline-flex items-center gap-2 text-sm font-semibold text-[#60a5fa] group-hover:text-white transition-colors duration-300"
+                                        className="inline-flex items-center gap-2 text-sm font-semibold text-[#2563eb] group-hover:text-blue-700 transition-colors duration-300"
                                     >
                                         Learn More
-                                        <div className="w-7 h-7 rounded-full bg-[#3b82f6]/10 flex items-center justify-center group-hover:bg-[#3b82f6] group-hover:text-white transition-all duration-300">
+                                        <div className="w-7 h-7 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-[#2563eb] group-hover:text-white transition-all duration-300">
                                             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" strokeWidth={2.5} />
                                         </div>
                                     </a>

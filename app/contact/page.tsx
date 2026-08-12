@@ -38,7 +38,7 @@ function Icon({ path }: { path: string }) {
 
 export default function RoofingContactSectionWhite({
     heading = 'Contact Us',
-    intro = "If you have any questions, please feel free to get in touch with us by phone, text, email, or the form below — a real roofer will get back to you.",
+    intro = "",
     phone = '347-7663-669',
     email = 'contact@expertsroofing.us',
     address = 'Dallas, TX',
@@ -60,7 +60,7 @@ export default function RoofingContactSectionWhite({
     return (
         <div className="relative w-full text-neutral-900 font-sans">
 
-            {/* Contact Section (Pure White Aesthetic with significantly increased top padding to push content further down, and darker gray background) */}
+
             <section
                 id="contact"
                 className="relative z-10 w-full bg-slate-200 pt-48 pb-20 md:pt-56 md:pb-28 px-6 border-t border-slate-300"
