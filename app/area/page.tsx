@@ -171,4 +171,4 @@ export default function ServiceArea() {
             </div>
         </section>
     );
-}
+}  
