@@ -67,8 +67,9 @@ export default function Navbar() {
                             <div className="w-6 h-6 rounded-full bg-[#3B82F6]/10 border border-[#3B82F6]/30 flex items-center justify-center group-hover:border-[#60A5FA] transition-colors">
                                 <Phone className="w-3.5 h-3.5 text-[#3B82F6]" strokeWidth={2.2} />
                             </div>
-                            <div className="flex items-center gap-2">
-                                <span className="font-bold text-zinc-100 text-[13.5px]">347-ROOF-NOW</span>
+                            <div className="flex flex-col">
+                                <span className="font-bold text-zinc-100 text-[13.5px] leading-tight">347-ROOF-NOW</span>
+                                <span className="text-[11px] text-zinc-400 font-medium tracking-wide">347-7663-669</span>
                             </div>
                         </a>
                     </div>

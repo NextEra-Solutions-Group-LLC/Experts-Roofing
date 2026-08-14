@@ -16,6 +16,7 @@ interface RoofingFooterProps {
     logoImg?: string;
     description?: string;
     phone?: string;
+    phoneSmall?: string;
     email?: string;
     address?: string;
     quickLinks?: FooterLink[];
@@ -42,7 +43,8 @@ export default function RoofingFooter({
     logoText = 'EXPERTS ROOFING',
     logoImg = 'https://i.ibb.co/0jyqw7Kr/image.png',
     description = "With years of experience serving Dallas TX, we're ready to be your trusted choice for a professional and high-quality project. Contact us today for your free estimate.",
-    phone = '347-7663-669',
+    phone = '347-ROOF-NOW',
+    phoneSmall = '347-7663-669',
     email = 'contact@expertsroofing.us',
     address = 'Dallas, TX',
     quickLinks = defaultLinks,
@@ -91,8 +93,12 @@ export default function RoofingFooter({
                             </h3>
                             <ul className="flex flex-col gap-3 text-sm text-white opacity-90">
                                 <li>
-                                    <a href={`tel:${phone}`} className="flex items-center gap-3 hover:text-blue-400 transition-colors duration-300">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500" /> {phone}
+                                    <a href={`tel:${phoneSmall}`} className="flex items-center gap-3 hover:text-blue-400 transition-colors duration-300">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0" />
+                                        <div className="flex flex-col">
+                                            <span className="font-bold text-[13.5px] leading-tight">{phone}</span>
+                                            <span className="text-[11px] opacity-75 font-medium tracking-wide">{phoneSmall}</span>
+                                        </div>
                                     </a>
                                 </li>
                                 <li>
