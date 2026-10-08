@@ -29,7 +29,7 @@ const defaultLinks: FooterLink[] = [
     { label: 'Home', href: '/' },
     { label: 'About Us', href: '/about' },
     { label: 'Our Services', href: '/services' },
-    { label: 'Project Gallery', href: '#gallery' },
+    { label: 'Project Gallery', href: '/gallery' },
     { label: 'Contact Us', href: '/contact' },
 ];
 
