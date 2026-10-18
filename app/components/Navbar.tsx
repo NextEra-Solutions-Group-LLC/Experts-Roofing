@@ -17,7 +17,7 @@ const NAV_LINKS = [
 const PHONE_DISPLAY = "347-ROOF-NOW";
 const PHONE_NUM = "347-766-3669";
 const PHONE_HREF = "tel:3477663669";
-const EMAIL_ADDRESS = "info@expertsroofing.com";
+const EMAIL_ADDRESS = "contact@expertsroofing.us";
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
@@ -49,11 +49,13 @@ export default function Navbar() {
                         <span className="font-semibold text-zinc-200">Dallas, TX</span>
                     </div>
 
-                    {/* Right side: Email & Phone Number */}
+                    {/* Right side: Email Icon Link & Phone Number */}
                     <div className="flex items-center gap-6 ml-auto sm:ml-0">
-                        {/* Email Info (Text Removed, Email Displayed) */}
+
+                        {/* Email Link (Icon + Email Address only, no 'CONTACT US' text) */}
                         <a
                             href={`mailto:${EMAIL_ADDRESS}`}
+                            title={`Email us at ${EMAIL_ADDRESS}`}
                             className="flex items-center gap-2.5 hover:text-[#60A5FA] transition-colors duration-300 group"
                         >
                             <div className="w-7 h-7 rounded-full bg-[#3B82F6]/15 border border-[#3B82F6]/40 flex items-center justify-center group-hover:border-[#60A5FA] group-hover:bg-[#3B82F6]/30 transition-all">
@@ -129,9 +131,8 @@ export default function Navbar() {
                         ))}
                     </nav>
 
-                    {/* 3 Action Buttons */}
+                    {/* Action Buttons */}
                     <div className="flex items-center gap-2.5">
-                        {/* 1. Call Now Button */}
                         <a
                             href={PHONE_HREF}
                             className="hidden lg:flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/80 px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-zinc-200 transition-colors hover:border-[#3B82F6] hover:text-white"
@@ -140,16 +141,14 @@ export default function Navbar() {
                             Call Now
                         </a>
 
-                        {/* 2. Free Estimate Button */}
                         <Link
                             href="/contact"
                             className="hidden sm:inline-flex items-center gap-2 rounded-full border border-[#3B82F6]/50 bg-[#3B82F6]/10 px-4.5 py-2.5 text-xs font-bold uppercase tracking-wider text-[#60A5FA] transition-all hover:bg-[#3B82F6] hover:text-white shadow-[0_0_15px_rgba(59,130,246,0.2)]"
                         >
                             <FileText className="w-3.5 h-3.5" strokeWidth={2.2} />
-                            Estimate
+                            Free Estimate
                         </Link>
 
-                        {/* 3. Book Online Button */}
                         <Link
                             href="/contact"
                             className="hidden md:inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#1D4ED8] via-[#2563EB] to-[#3B82F6] hover:from-[#2563EB] hover:to-[#1D4ED8] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-[0_4px_20px_rgba(37,99,235,0.5)] transition-all duration-300 transform hover:-translate-y-0.5 border border-blue-400/30"
@@ -200,7 +199,7 @@ export default function Navbar() {
                                 </motion.div>
                             ))}
 
-                            {/* Mobile 3 Action Buttons */}
+                            {/* Mobile Action Buttons */}
                             <div className="mt-6 space-y-3">
                                 <a
                                     href={PHONE_HREF}
