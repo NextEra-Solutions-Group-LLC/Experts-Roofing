@@ -49,19 +49,18 @@ export default function Navbar() {
                         <span className="font-semibold text-zinc-200">Dallas, TX</span>
                     </div>
 
-                    {/* Right side: Email Icon Link & Phone Number */}
+                    {/* Right side: Pure Email Icon (No text) & Phone Number */}
                     <div className="flex items-center gap-6 ml-auto sm:ml-0">
 
-                        {/* Email Link (Icon + Email Address only, no 'CONTACT US' text) */}
+                        {/* Email Link: Just the icon as instructed */}
                         <a
                             href={`mailto:${EMAIL_ADDRESS}`}
-                            title={`Email us at ${EMAIL_ADDRESS}`}
-                            className="flex items-center gap-2.5 hover:text-[#60A5FA] transition-colors duration-300 group"
+                            title={`Email us: ${EMAIL_ADDRESS}`}
+                            className="flex items-center group"
                         >
-                            <div className="w-7 h-7 rounded-full bg-[#3B82F6]/15 border border-[#3B82F6]/40 flex items-center justify-center group-hover:border-[#60A5FA] group-hover:bg-[#3B82F6]/30 transition-all">
-                                <Mail className="w-4 h-4 text-[#3B82F6]" strokeWidth={2.2} />
+                            <div className="w-8 h-8 rounded-full bg-[#3B82F6]/15 border border-[#3B82F6]/40 flex items-center justify-center group-hover:border-[#60A5FA] group-hover:bg-[#3B82F6]/30 transition-all shadow-[0_0_10px_rgba(59,130,246,0.2)]">
+                                <Mail className="w-4 h-4 text-[#3B82F6] group-hover:text-white transition-colors" strokeWidth={2.2} />
                             </div>
-                            <span className="font-semibold text-zinc-200 tracking-wide text-[13.5px]">{EMAIL_ADDRESS}</span>
                         </a>
 
                         <span className="w-px h-4 bg-zinc-800 hidden sm:block" />
@@ -71,7 +70,7 @@ export default function Navbar() {
                             href={PHONE_HREF}
                             className="flex items-center gap-2.5 hover:text-[#60A5FA] transition-colors duration-300 group"
                         >
-                            <div className="w-7 h-7 rounded-full bg-[#3B82F6]/15 border border-[#3B82F6]/40 flex items-center justify-center group-hover:border-[#60A5FA] group-hover:bg-[#3B82F6]/30 transition-all">
+                            <div className="w-8 h-8 rounded-full bg-[#3B82F6]/15 border border-[#3B82F6]/40 flex items-center justify-center group-hover:border-[#60A5FA] group-hover:bg-[#3B82F6]/30 transition-all">
                                 <Phone className="w-4 h-4 text-[#3B82F6]" strokeWidth={2.2} />
                             </div>
                             <div className="flex flex-col">
@@ -95,7 +94,7 @@ export default function Navbar() {
                     : "bg-transparent border-b border-transparent"
                     }`}
             >
-                {/* Glowing Top Neon Line */}
+                {/* Glowing Top Line */}
                 <div className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#3B82F6] to-transparent transition-opacity duration-500 ${scrolled ? "opacity-90 shadow-[0_0_12px_#3B82F6]" : "opacity-0"}`} />
 
                 <div className="mx-auto max-w-7xl px-6 lg:px-12 flex items-center justify-between gap-4">
@@ -113,8 +112,6 @@ export default function Navbar() {
                                 />
                             </div>
                         </Link>
-
-                        <div className="absolute -bottom-[22px] left-0 w-36 h-2 bg-gradient-to-r from-[#2563EB] via-[#60A5FA] to-transparent rounded-bl-xl shadow-[0_4px_16px_rgba(59,130,246,0.6)] pointer-events-none transition-all duration-500 group-hover:w-48" />
                     </div>
 
                     {/* Desktop Navigation Links */}
@@ -123,7 +120,7 @@ export default function Navbar() {
                             <Link
                                 key={link.label}
                                 href={link.href}
-                                className="relative text-[14px] tracking-wide font-medium text-zinc-300 hover:text-white transition-colors duration-300 group py-1"
+                                className="relative text-[14px] tracking-wide font-medium text-zinc-100 hover:text-white transition-colors duration-300 group py-1 drop-shadow-sm"
                             >
                                 {link.label}
                                 <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] transition-all duration-300 group-hover:w-full rounded-full shadow-[0_0_8px_#3B82F6]" />
@@ -132,23 +129,26 @@ export default function Navbar() {
                     </nav>
 
                     {/* Action Buttons */}
-                    <div className="flex items-center gap-2.5">
+                    <div className="flex items-center gap-3">
+                        {/* Call Now Button */}
                         <a
                             href={PHONE_HREF}
-                            className="hidden lg:flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/80 px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-zinc-200 transition-colors hover:border-[#3B82F6] hover:text-white"
+                            className="hidden lg:flex items-center gap-2 rounded-full border border-slate-700/80 bg-slate-900/90 backdrop-blur-md px-4.5 py-2.5 text-xs font-bold uppercase tracking-wider text-white hover:border-[#3B82F6] transition-all shadow-md"
                         >
                             <Phone className="w-3.5 h-3.5 text-[#3B82F6]" strokeWidth={2.2} />
                             Call Now
                         </a>
 
+                        {/* High-Visibility Free Estimate Button */}
                         <Link
                             href="/contact"
-                            className="hidden sm:inline-flex items-center gap-2 rounded-full border border-[#3B82F6]/50 bg-[#3B82F6]/10 px-4.5 py-2.5 text-xs font-bold uppercase tracking-wider text-[#60A5FA] transition-all hover:bg-[#3B82F6] hover:text-white shadow-[0_0_15px_rgba(59,130,246,0.2)]"
+                            className="hidden sm:inline-flex items-center gap-2 rounded-full bg-white text-slate-900 hover:bg-blue-50 px-5 py-2.5 text-xs font-black uppercase tracking-wider shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 border border-white"
                         >
-                            <FileText className="w-3.5 h-3.5" strokeWidth={2.2} />
+                            <FileText className="w-3.5 h-3.5 text-blue-600" strokeWidth={2.5} />
                             Free Estimate
                         </Link>
 
+                        {/* Book Online Button */}
                         <Link
                             href="/contact"
                             className="hidden md:inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#1D4ED8] via-[#2563EB] to-[#3B82F6] hover:from-[#2563EB] hover:to-[#1D4ED8] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-[0_4px_20px_rgba(37,99,235,0.5)] transition-all duration-300 transform hover:-translate-y-0.5 border border-blue-400/30"
@@ -162,7 +162,7 @@ export default function Navbar() {
                         <button
                             aria-label="Toggle menu"
                             onClick={() => setMobileOpen((v) => !v)}
-                            className="xl:hidden flex items-center justify-center w-11 h-11 rounded-full border border-[#3B82F6]/40 text-[#60A5FA] bg-[#3B82F6]/10 hover:bg-[#3B82F6]/20 transition-colors shadow-[0_0_12px_rgba(59,130,246,0.2)]"
+                            className="xl:hidden flex items-center justify-center w-11 h-11 rounded-full border border-white/30 text-white bg-slate-900/80 backdrop-blur-md transition-colors shadow-md"
                         >
                             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
                         </button>
@@ -212,9 +212,9 @@ export default function Navbar() {
                                     <Link
                                         href="/contact"
                                         onClick={() => setMobileOpen(false)}
-                                        className="flex items-center justify-center gap-2 rounded-full border border-[#3B82F6]/50 bg-[#3B82F6]/10 py-3 text-xs font-bold uppercase tracking-wider text-[#60A5FA]"
+                                        className="flex items-center justify-center gap-2 rounded-full bg-white py-3 text-xs font-black uppercase tracking-wider text-slate-900 shadow-md"
                                     >
-                                        <FileText className="w-4 h-4" />
+                                        <FileText className="w-4 h-4 text-blue-600" />
                                         Free Estimate
                                     </Link>
                                     <Link
