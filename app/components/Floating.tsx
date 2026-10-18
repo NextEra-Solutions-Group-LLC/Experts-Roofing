@@ -2,11 +2,8 @@
 
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Phone, CalendarDays, X, Send, User, Mail, MessageSquare } from 'lucide-react';
+import { X, Send, User, Mail, MessageSquare, FileText } from 'lucide-react';
 
-
-const PHONE_DISPLAY = "817-768-0413";
-const PHONE_TEL = "tel:+18177680413";
 const EMAIL_CONTACT = "raul.gill.2020@gmail.com";
 
 interface FormState {
@@ -41,7 +38,7 @@ export default function FloatingActions() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        console.log("Appointment request:", form);
+        console.log("Estimate request:", form);
         setSubmitted(true);
         setTimeout(() => {
             setIsModalOpen(false);
@@ -50,39 +47,21 @@ export default function FloatingActions() {
         }, 2000);
     };
 
-    const handleDirectCall = () => {
-        window.location.href = PHONE_TEL;
-    };
-
     return (
         <>
-            {/* ---------------- Floating action cluster ---------------- */}
-            <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
-                {/* Book Appointment Button */}
+            {/* ---------------- Floating action cluster (Mobile Only) ---------------- */}
+            <div className="fixed bottom-6 right-6 z-50 flex sm:hidden flex-col items-end gap-3">
+                {/* Free Estimate Floating Button - Hidden on Desktop */}
                 <motion.button
                     onClick={() => setIsModalOpen(true)}
                     whileHover={{ scale: 1.04 }}
                     whileTap={{ scale: 0.96 }}
-                    className="flex items-center gap-2 rounded-full px-5 py-3.5 text-[#0B1220] font-bold shadow-xl shadow-[#1d4ed8]/30 backdrop-blur-md border border-[#1d4ed8]/40 bg-[#1d4ed8] transition-all hover:bg-[#1e40af] hover:text-white"
+                    className="flex items-center gap-2 rounded-full px-5 py-3.5 text-white font-bold shadow-xl shadow-[#1d4ed8]/30 backdrop-blur-md border border-[#1d4ed8]/40 bg-[#1d4ed8] transition-all hover:bg-[#1e40af]"
                 >
-                    <CalendarDays className="h-5 w-5 shrink-0 text-white" />
-                    <span className="hidden sm:inline whitespace-nowrap text-white">
-                        Book Appointment
+                    <FileText className="h-5 w-5 shrink-0 text-white" />
+                    <span className="whitespace-nowrap text-white">
+                        Free Estimate
                     </span>
-                </motion.button>
-
-                {/* Direct Call Button (Mobile Only) */}
-                <motion.button
-                    onClick={handleDirectCall}
-                    whileHover={{ scale: 1.08 }}
-                    whileTap={{ scale: 0.92 }}
-                    className="relative flex h-14 w-14 items-center justify-center rounded-full text-white shadow-lg shadow-[#1d4ed8]/30 sm:hidden border border-[#1d4ed8]/50 bg-[#1d4ed8] backdrop-blur-md"
-                    aria-label={`Call ${PHONE_DISPLAY}`}
-                >
-                    <span
-                        className="absolute inset-0 rounded-full animate-ping opacity-40 bg-[#1d4ed8]"
-                    />
-                    <Phone className="h-6 w-6 relative z-10 text-white" />
                 </motion.button>
             </div>
 
@@ -112,8 +91,8 @@ export default function FloatingActions() {
                             {/* header */}
                             <div className="flex items-center justify-between px-6 py-5 border-b border-white/10 bg-[#0B1220]">
                                 <div className="flex items-center gap-3">
-                                    <CalendarDays className="h-6 w-6 text-[#1d4ed8]" />
-                                    <h2 className="text-lg font-bold text-white">Book an Appointment</h2>
+                                    <FileText className="h-6 w-6 text-[#1d4ed8]" />
+                                    <h2 className="text-lg font-bold text-white">Request Free Estimate</h2>
                                 </div>
                                 <button
                                     onClick={() => setIsModalOpen(false)}
@@ -135,7 +114,7 @@ export default function FloatingActions() {
                                             Request sent!
                                         </p>
                                         <p className="text-sm text-neutral-300">
-                                            We&apos;ll follow up within one business day.
+                                            We&apos;ll get back to you with a free estimate within one business day.
                                         </p>
                                     </div>
                                 ) : (
@@ -166,20 +145,19 @@ export default function FloatingActions() {
                                                 />
                                             </div>
                                             <div className="relative">
-                                                <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-400" />
                                                 <input
                                                     required
                                                     type="tel"
                                                     name="phone"
                                                     value={form.phone}
                                                     onChange={handleChange}
-                                                    placeholder={PHONE_DISPLAY}
-                                                    className="w-full rounded-xl border border-white/10 bg-black/30 py-3.5 pl-10 pr-4 text-sm text-white placeholder-neutral-400 outline-none focus:border-[#1d4ed8] transition-colors"
+                                                    placeholder="Phone number"
+                                                    className="w-full rounded-xl border border-white/10 bg-black/30 py-3.5 px-4 text-sm text-white placeholder-neutral-400 outline-none focus:border-[#1d4ed8] transition-colors"
                                                 />
                                             </div>
                                         </div>
 
-                                        {/* calendar / preferred date & time */}
+                                        {/* preferred date & time */}
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             <div>
                                                 <label className="mb-1.5 block text-xs font-bold text-neutral-300 uppercase tracking-wider">
@@ -216,7 +194,7 @@ export default function FloatingActions() {
                                                 name="message"
                                                 value={form.message}
                                                 onChange={handleChange}
-                                                placeholder="Tell us about your roof (optional)"
+                                                placeholder="Tell us about your roof project (optional)"
                                                 rows={3}
                                                 className="w-full resize-none rounded-xl border border-white/10 bg-black/30 py-3.5 pl-10 pr-4 text-sm text-white placeholder-neutral-400 outline-none focus:border-[#1d4ed8] transition-colors"
                                             />
@@ -227,17 +205,7 @@ export default function FloatingActions() {
                                             className="flex w-full items-center justify-center gap-2 rounded-xl py-3.5 font-bold text-white transition-all hover:scale-[1.01] active:scale-[0.99] shadow-lg shadow-[#1d4ed8]/20 bg-[#1d4ed8] hover:bg-[#1e40af]"
                                         >
                                             <Send className="h-4 w-4 text-white" />
-                                            Request Appointment
-                                        </button>
-
-                                        {/* quick direct-call shortcut inside modal */}
-                                        <button
-                                            type="button"
-                                            onClick={handleDirectCall}
-                                            className="flex w-full items-center justify-center gap-2 rounded-xl border border-white/10 bg-black/30 py-3.5 text-sm font-medium text-neutral-300 hover:bg-black/50 hover:text-white transition-colors"
-                                        >
-                                            <Phone className="h-4 w-4 text-[#1d4ed8]" />
-                                            Or call us now — {PHONE_DISPLAY}
+                                            Get Free Estimate
                                         </button>
                                     </form>
                                 )}

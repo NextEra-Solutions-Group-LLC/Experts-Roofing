@@ -2,30 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Wrench, ClipboardCheck, ShieldAlert } from "lucide-react";
 
 const HERO_IMAGES = [
     "https://i.ibb.co/Swrm59HQ/image.png",
     "https://i.ibb.co/nNZtQRj0/image.png",
     "https://i.ibb.co/DPkwyVxm/image.png",
-];
-
-const FEATURES = [
-    {
-        icon: Wrench,
-        title: "Quality Materials",
-        desc: "We have all the quality roofing products needed.",
-    },
-    {
-        icon: ClipboardCheck,
-        title: "Expert Engineer",
-        desc: "Our roofing team members are well educated and professional.",
-    },
-    {
-        icon: ShieldAlert,
-        title: "Quality Maintenance",
-        desc: "Ensure the quality of work is our main goal to follow.",
-    },
 ];
 
 export default function Hero() {
@@ -57,7 +38,7 @@ export default function Hero() {
                 </AnimatePresence>
             </div>
 
-            {/* Content Container (No background box around left column) */}
+            {/* Content Container */}
             <div className="relative z-20 mx-auto max-w-7xl px-6 lg:px-12 w-full">
                 <div className="grid lg:grid-cols-2 gap-14 items-center">
                     {/* Left Column: Direct text on background image */}
@@ -122,32 +103,6 @@ export default function Hero() {
 
                     {/* Right Column */}
                     <div className="hidden lg:block relative"></div>
-                </div>
-
-                {/* ---------- Feature Cards ---------- */}
-                <div className="relative mt-16 grid sm:grid-cols-3 gap-8">
-                    {FEATURES.map((f, i) => (
-                        <motion.div
-                            key={f.title}
-                            initial={{ opacity: 0, y: 24 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-60px" }}
-                            transition={{ delay: 0.12 * i, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                            className="group relative bg-white rounded-3xl p-8 text-slate-900 shadow-xl border border-slate-100 hover:border-blue-500/30 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5"
-                        >
-                            <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-blue-50 border border-blue-100 mx-auto mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-                                <f.icon className="w-7 h-7 text-blue-600 group-hover:text-white transition-colors" strokeWidth={1.8} />
-                            </div>
-
-                            <h3 className="text-slate-900 font-extrabold text-lg text-center mb-2 uppercase group-hover:text-blue-600 transition-colors">
-                                {f.title}
-                            </h3>
-
-                            <p className="text-slate-600 text-sm leading-relaxed text-center font-medium">
-                                {f.desc}
-                            </p>
-                        </motion.div>
-                    ))}
                 </div>
             </div>
         </section>

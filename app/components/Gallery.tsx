@@ -54,21 +54,22 @@ export default function ProjectGallery() {
     return (
         <section
             ref={containerRef}
-            className="relative bg-[#0B0C0F]"
+            className="relative bg-white text-slate-900"
             style={{ height: `${projects.length * 100}vh` }}
         >
             <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col">
 
-                <div className="relative z-[100] flex flex-col items-center pt-12 sm:pt-16 pb-4 sm:pb-8 text-center bg-[#0B0C0F]">
-                    <span className="inline-block text-[11px] sm:text-xs font-semibold tracking-[0.28em] uppercase text-[#3b82f6] bg-[#3b82f6]/10 px-4 py-1.5 rounded-full border border-[#3b82f6]/30 mb-3">
+                {/* Section Header */}
+                <div className="relative z-[100] flex flex-col items-center pt-10 sm:pt-14 pb-4 sm:pb-6 text-center bg-white">
+                    <span className="inline-block text-[11px] sm:text-xs font-bold tracking-[0.28em] uppercase text-blue-600 bg-blue-50 px-4 py-1.5 rounded-full border border-blue-100 mb-2">
                         Our Work
                     </span>
-                    <h2 className="text-[#ffffff] font-extrabold text-2xl sm:text-3xl lg:text-4xl tracking-tight">
+                    <h2 className="text-slate-900 font-black text-2xl sm:text-3xl lg:text-4xl tracking-tight uppercase">
                         Recent Projects
                     </h2>
                 </div>
 
-
+                {/* Full Image Stacking Slider */}
                 <div className="relative flex-grow w-full h-full">
                     {projects.map((project, i) => {
                         const vhSafe = vh || 1;
@@ -78,18 +79,18 @@ export default function ProjectGallery() {
 
                         return (
                             <div
-                                key={project.title}
+                                key={project.title + i}
                                 className="absolute inset-0 w-full h-full flex items-center justify-center will-change-transform"
                                 style={{
                                     zIndex: i + 1,
                                     transform: `translateY(${translateY}%)`,
                                 }}
                             >
-                                {/* Main Card Container */}
+                                {/* Main Card Container (Pure Image Display) */}
                                 <div className="flex h-full w-full items-start justify-center px-0 sm:px-6 lg:px-10">
-                                    <div className="relative w-full max-w-7xl overflow-hidden rounded-none sm:rounded-[2.5rem] border-b sm:border border-[#3b82f6]/25 bg-[#141519] shadow-[0_30px_70px_-15px_rgba(0,0,0,0.9)] h-[55vh] sm:h-[82vh]">
+                                    <div className="relative w-full max-w-7xl overflow-hidden rounded-none sm:rounded-[2.5rem] border border-slate-200/80 bg-slate-100 shadow-xl h-[60vh] sm:h-[78vh]">
 
-                                        {/* Next.js Optimized Image */}
+                                        {/* Next.js Optimized Image - 100% Original Clarity */}
                                         <Image
                                             src={project.src}
                                             alt={project.title}
@@ -100,29 +101,11 @@ export default function ProjectGallery() {
                                             draggable={false}
                                         />
 
-                                        {/* Balanced Dark Gradient Overlay for Text Readability */}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
-
-                                        {/* Index Badge */}
-                                        <div className="absolute right-5 top-5 sm:right-8 sm:top-8 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-[#3b82f6]/40 bg-[#141519]/70 font-mono text-xs sm:text-sm font-bold text-[#60a5fa] backdrop-blur-md shadow-lg z-10">
+                                        {/* Minimal Corner Number Badge */}
+                                        <div className="absolute right-5 top-5 sm:right-8 sm:top-8 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-white/50 bg-white/90 font-mono text-xs sm:text-sm font-black text-blue-600 backdrop-blur-md shadow-lg z-10">
                                             {String(i + 1).padStart(2, "0")}
                                         </div>
 
-
-                                        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 sm:px-12 z-10">
-                                            <span className="inline-block text-[10px] sm:text-xs font-semibold tracking-[0.25em] uppercase text-blue-400 mb-2 drop-shadow">
-                                                Featured Project
-                                            </span>
-                                            <h3 className="text-3xl font-extrabold text-white sm:text-5xl tracking-tight mb-3 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
-                                                {project.title}
-                                            </h3>
-                                            <p className="text-base sm:text-xl text-zinc-200 font-medium mb-6 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-                                                {project.subtitle}
-                                            </p>
-                                            <span className="inline-block rounded-full bg-gradient-to-r from-[#2563eb] to-[#3b82f6] px-7 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-blue-500/40 transition-transform hover:scale-105 border border-blue-400/30">
-                                                View Project
-                                            </span>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
